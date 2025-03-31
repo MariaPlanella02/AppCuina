@@ -1,12 +1,102 @@
-<!doctype html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8"/>
-        <title>My First Parcel App</title>
-        <link rel="stylesheet" href="styles.css" />
-        <script type="module" src="app.js"></script>
-    </head>
-    <body>
-        <h1>Hello, World!</h1>
-    </body>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recetario</title>
+    <link rel="stylesheet" href="./styles.scss">
+</head>
+<body>
+    <header>
+        <h1>Sabores del Mundo</h1>
+        <nav>
+            <ul>
+                <li><a href="categoria.html">Explorar Recetas</a></li>
+                <li><a href="enlaces.html">Enlaces y Atribuciones</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="portada">
+            <h2>Descubre nuevas recetas y aprende a cocinar</h2>
+            <p>En este sitio encontrarás recetas deliciosas, información sobre restaurantes y eventos culinarios.</p>
+        </section>
+
+        <section class="carrusel">
+            <h2>Platos Italianos</h2>
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="./img/pesto.jpg" alt="Pasta al Pesto">
+                        <h3><a href="detalle.html">Pasta al Pesto</a></h3>
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./img/lasagna.jpg" alt="Lasagna">
+                        <h3>Lasagna</h3>
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./img/pizza.jpg" alt="Pizza Margarita">
+                        <h3>Pizza Margarita</h3>
+                    </div>
+                </div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </section>
+
+        <section class="carrusel">
+            <h2>Platos Mexicanos</h2>
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="./img/tacos.jpg" alt="Tacos de Pollo">
+                        <h3>Tacos de Pollo</h3>
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./img/enchilada.jpg" alt="Enchiladas">
+                        <h3>Enchiladas</h3>
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./img/guacamole.jpg" alt="Guacamole">
+                        <h3>Guacamole</h3>
+                    </div>
+                </div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </section>
+
+        <section class="carrusel">
+            <h2>Platos Asiáticos</h2>
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="./img/shushi.jpg" alt="Sushi">
+                        <h3>Sushi</h3>
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./img/ramen.jpg" alt="Ramen">
+                        <h3>Ramen</h3>
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./img/dunplings.jpg" alt="Dumplings">
+                        <h3>Dumplings</h3>
+                    </div>
+                </div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </section>
+    </main>
+    <script type="module" src="app.js"></script>
+
+    <footer>
+        <p>&copy; 2025 SaboresMundo. Todos los derechos reservados.</p>
+        <p>Desarrollado por María Planella Vall. </p>
+    </footer>    
+
+</body>
 </html>

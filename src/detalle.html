@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle de la Receta</title>
+    <link rel="stylesheet" href="styles.scss">
+</head>
+<body>
+    <header>
+        <h1>Pasta al Pesto</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="categoria.html">Categorías</a></li>
+                <li><a href="enlaces.html">Enlaces</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="detalle">
+            <!-- Imagen destacada -->
+            <img src="./img/pesto.jpg" alt="Pasta al Pesto" class="imagen-detalle">
+            
+            <h2> Descripción</h2>
+
+            <!-- Texto explicativo -->
+            <div class="texto-detalle">
+                <p>La pasta al pesto es una receta tradicional italiana que resalta por su frescura y su sabor único. Combina hojas de albahaca recién recolectadas, ajo, piñones y queso parmesano para crear una salsa exquisita. Este plato clásico es perfecto para impresionar a tus invitados o simplemente disfrutar de una comida casera.</p>
+                <p>La clave para un pesto auténtico está en el uso de ingredientes frescos y de calidad. Además, el aceite de oliva virgen extra potencia todos los sabores, llevando este plato a otro nivel. La pasta al pesto es rápida y fácil de preparar, perfecta para quienes buscan algo delicioso sin complicarse demasiado en la cocina.</p>
+                <p>Este plato es versátil y puede adaptarse a tus gustos personales. Desde la elección de la pasta hasta posibles acompañamientos, como tomates cherry asados o pan crujiente, la pasta al pesto es un imprescindible para cualquier amante de la cocina italiana.</p>
+            </div>
+
+            <!-- Galería de imágenes -->
+            <section class="carrusel">
+                <h2>Pasos</h2>
+                <div class="swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="./img/salsa-pesto.jpg" alt="Tacos de Pollo">
+                            <h3>Paso 1</h3>
+                            <p>Se mezcla hojas frescas de albahaca, ajo, piñones, queso parmesano y aceite, se mezcla para crear la salsa</p>
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="./img/cocinar-pasta.jpg" alt="Enchiladas">
+                            <h3>Paso 2</h3>
+                            <p>Hierve la pasta en agua con sal asta que este al dente</p>
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="./img/pasta-pesto.jpg" alt="Guacamole">
+                            <h3>Paso 3</h3>
+                            <p>Combina la pasta caliente con el pesto</p>
+                        </div>
+                    </div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </section>
+            
+            <div class="linea-divisoria"></div>
+
+            <!-- Vídeo -->
+             <h2>Vídeo</h2>
+            <iframe width="560" height="315" 
+                src="https://www.youtube.com/embed/mpJW-bIZrQ0" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+            </iframe>
+
+        </section>
+    </main>
+    <script type="module" src="app.js"></script>
+
+    <footer>
+        <p>&copy; 2025 SaboresMundo. Todos los derechos reservados.</p>
+        <p>Desarrollado por María Planella Vall. </p>
+    </footer>    
+
+</body>
+</html>

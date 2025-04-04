@@ -1,13 +1,55 @@
 @use "sass:color";
 @use "swiper/swiper.scss";
 
-//Variables
+// Variables Globales
 $color-principal: #ff6347; 
+$color-secundario: #6c9b58;
 $color-fondo: #f8f8f8;
 $color-texto: white;
+$color-enlace: #0078D7;
+$color-hover: #000000;
 $fuente-principal: Arial, sans-serif;
 
-//Estilos generales
+$btn-size: 40px;
+$btn-color: rgba(255, 255, 255, 0.5);
+$btn-hover-color: rgba(255, 255, 255, 0.8);
+$icon-size: 20px;
+$icon-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+
+// Mixins para reutilización de código
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin box-shadow($level) {
+    box-shadow: 0 $level $level * 2 rgba(0, 0, 0, 0.1);
+}
+
+// Mixin para botones de navegación Swiper
+@mixin swiper-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: $btn-size;
+    height: $btn-size;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $btn-color;
+    color: rgb(0, 0, 0);
+    font-size: $icon-size;
+    cursor: pointer;
+    z-index: 10;
+
+    &:hover {
+        background-color: $btn-hover-color;
+    }
+}
+
+// Estilos generales
 body {
     font-family: $fuente-principal;
     margin: 0;
@@ -16,7 +58,7 @@ body {
     text-align: center;
 }
 
-//Header y navegación
+// Header y navegación
 header {
     background-color: $color-principal;
     color: $color-texto;
@@ -26,20 +68,25 @@ header {
 nav ul {
     list-style: none;
     padding: 0;
-}
+    @include flex-center;
 
-nav ul li {
-    display: inline;
-    margin: 0 15px;
+    li {
+        margin: 0 15px;
 
-    a {
-        color: $color-texto;
-        text-decoration: none;
-        font-weight: bold;
+        a {
+            color: $color-texto;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+
+            &:hover {
+                color: $color-hover;
+            }
+        }
     }
 }
 
-//Portada
+// Portada
 .portada {
     padding: 50px 20px;
 
@@ -49,12 +96,13 @@ nav ul li {
         height: auto;
         border-radius: 10px;
         margin-top: 20px;
+        @include box-shadow(4px);
     }
 }
 
-//Footer 
+// Footer
 footer {
-    background-color: #ff6347; 
+    background-color: $color-principal;
     color: white;
     text-align: center;
     padding: 20px;
@@ -66,39 +114,44 @@ footer {
     }
 }
 
-
-//Detalle
+// Detalle
 .detalle {
     max-width: 1000px;
     margin: 20px auto;
     background-color: white;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    @include box-shadow(4px);
     overflow: hidden;
     padding: 20px;
 
-    .imagen-detalle {
-        width: 100%;
-        max-height: 800px; 
-        object-fit: cover; 
-        border-bottom: 3px solid #6c9b58; 
+    h1 {
+        font-size: 2.5rem;
+        font-weight: bold;
+        text-align: center;
+        margin-top: 20px;
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
     }
 
-    .texto-detalle {
-        p {
-            margin: 15px 0;
-            line-height: 1.6;
-            font-size: 1.2rem;
-            color: #666;
-        }
+    .imagen-detalle {
+        width: 100%;
+        max-height: 800px;
+        object-fit: cover;
+        border-bottom: 3px solid $color-secundario;
+    }
+
+    .texto-detalle p {
+        margin: 15px 0;
+        line-height: 1.6;
+        font-size: 1.2rem;
+        color: #666;
     }
 
     .linea-divisoria {
         width: 100%;
-        height: 2px; 
-        background-color: #6c9b58; 
-        margin: 30px 0; 
-        border-radius: 8px; 
+        height: 2px;
+        background-color: $color-secundario;
+        margin: 30px 0;
+        border-radius: 8px;
     }
 
     iframe {
@@ -107,28 +160,27 @@ footer {
         width: 100%;
         max-width: 560px;
         height: 315px;
-        border-radius: 8px; 
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+        border-radius: 8px;
+        @include box-shadow(4px);
     }
 }
 
-//Enlaces
+// Enlaces
 .enlaces {
     max-width: 800px;
     margin: 20px auto;
     background-color: white;
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    @include box-shadow(4px);
 
     h2 {
-        margin-top: 0;
         font-size: 1.8rem;
-        color: #0078D7; 
+        color: $color-enlace;
     }
 
     ul {
-        list-style-type: none; 
+        list-style-type: none;
         padding-left: 20px;
 
         li {
@@ -136,12 +188,12 @@ footer {
 
             a {
                 text-decoration: none;
-                color: #0078D7;
+                color: $color-enlace;
                 font-weight: bold;
                 transition: color 0.3s;
 
                 &:hover {
-                    color: #0056a3; 
+                    color: $color-hover;
                 }
             }
         }
@@ -154,42 +206,41 @@ footer {
     }
 }
 
-//Categoria
+// Categoría
 #categorias-container {
-    display: grid; 
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
-    gap: 20px; 
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
     padding: 0;
 }
 
 .categoria {
     background-color: white;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
-    overflow: hidden; 
-    transition: transform 0.3s, box-shadow 0.3s; 
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    @include box-shadow(4px);
 
     &:hover {
-        transform: scale(1.05); 
-        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); 
+        transform: scale(1.05);
+        @include box-shadow(6px);
     }
 
     a {
         text-decoration: none;
-        color: inherit; 
+        color: inherit;
     }
 
     img {
-        width: 100%; 
-        max-height: 500px; 
-        object-fit: cover; 
-        border-bottom: 3px solid #ff6347; 
+        width: 100%;
+        max-height: 500px;
+        object-fit: cover;
+        border-bottom: 3px solid $color-principal;
     }
 
     h3 {
         margin: 15px;
         font-size: 1.5rem;
-        color: #333;
         text-align: center;
     }
 
@@ -197,67 +248,64 @@ footer {
         margin: 0 15px 15px;
         font-size: 1rem;
         text-align: center;
-        color: #666; 
+        color: #666;
     }
 }
 
-// Swiper
+// Swiper Carrusel
 .carrusel {
-    width: 100%;
     max-width: 800px;
     margin: auto;
     position: relative;
 
     .swiper {
-        width: 100%;
         overflow: hidden;
     }
 
     .swiper-slide {
-        position: relative;
-        display: flex;
+        @include flex-center;
         flex-direction: column;
-        justify-content: flex-start; 
-        align-items: center;
         text-align: center;
 
         img {
-            width: 100%; 
-            max-height: 500px; 
-            object-fit: cover; 
-            border-radius: 8px; 
-            margin-bottom: 10px; 
+            width: 100%;
+            max-height: 500px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 10px;
         }
 
         h3 {
-            position: absolute; 
-            top: 10px; 
-            left: 50%; 
-            transform: translateX(-50%); 
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
             font-size: 1.5rem;
             color: white;
-            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7); 
-            z-index: 1; 
-        }
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
 
-        h3 a {
-            text-decoration: none;
-            color: inherit; 
-            transition: color 0.3s;
-
-            &:hover {
-                color: #ff6347; 
+            a {
+                text-decoration: none;
+                color: inherit;
+                font-weight: bold;
+                padding: 5px;
+                transition: background-color 0.3s, color 0.3s;
+    
+                &:hover {
+                    color: $color-texto; // Letras blancas
+                    background-color: $color-principal; // Fondo en color principal
+                    border-radius: 5px;
+                }
             }
         }
     }
 
-    //Botones navegación carrusel
+    //Botones de navegación carrusel
     .swiper-button-prev,
     .swiper-button-next {
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
-        z-index: 10;
         width: 40px;
         height: 40px;
         border-radius: 50%;
@@ -268,6 +316,7 @@ footer {
         color: rgb(0, 0, 0);
         font-size: 20px;
         cursor: pointer;
+        z-index: 10;
 
         &:hover {
             background-color: rgba(255, 255, 255, 0.8);
@@ -275,27 +324,40 @@ footer {
     }
 
     .swiper-button-prev {
+        @include swiper-btn;
         left: 10px;
+    
+        &::after {
+            font-size: $icon-size;
+            font-weight: bold;
+            content: '←'; // Flecha izquierda
+        }
+    }
+    
+    .swiper-button-next {
+        @include swiper-btn;
+        right: 10px;
+    
+        &::after {
+            font-size: $icon-size;
+            font-weight: bold;
+            content: '→'; // Flecha derecha
+        }
     }
 
+    .swiper-button-prev {
+        left: 10px;
+    }
+    
     .swiper-button-next {
         right: 10px;
     }
 
-    .swiper-button-prev::after{
-        font-size: 20px;
-        font-weight: bold;
-        content: '←'; 
-    }
-    .swiper-button-next::after {
-        font-size: 20px;
-        font-weight: bold;
-        content: '→'; 
-    }
-
-    // Paginación carrusel
     .swiper-pagination {
         position: absolute;
         bottom: 10px;
     }
 }
+
+
+

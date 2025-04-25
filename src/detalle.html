@@ -20,7 +20,13 @@
     <main>
         <section class="detalle">
             <!-- Imagen destacada -->
-            <img src="./img/pesto.jpg" alt="Pasta al Pesto" class="imagen-detalle">
+            <img src="./optimized-img/medium-pesto.webp" 
+            srcset="./optimized-img/small-pesto.webp 400w,
+                    ./optimized-img/medium-pesto.webp 800w,
+                    ./optimized-img/large-pesto.webp 1200w"
+            sizes="(max-width: 768px) 100vw, 50vw"
+            alt="Pasta al Pesto"
+            class="imagen-detalle"> 
             
             <h1>Pasta al Pesto</h1>
 
@@ -39,19 +45,40 @@
                 <div class="swiper">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
-                            <img src="./img/salsa-pesto.jpg" alt="Paso 1 receta">
+
+                            <img src="./optimized-img/medium-salsa-pesto.webp" 
+                            srcset="./optimized-img/small-salsa-pesto.webp 400w,
+                                    ./optimized-img/medium-salsa-pesto.webp 800w,
+                                    ./optimized-img/large-salsa-pesto.webp 1200w"
+                            sizes="(max-width: 768px) 100vw, 50vw"
+                            alt="Paso 1 receta"> 
                             <h3>Paso 1</h3>
                             <p>Se mezcla hojas frescas de albahaca, ajo, piñones, queso parmesano y aceite, para crear la salsa</p>
+
                         </div>
                         <div class="swiper-slide">
-                            <img src="./img/cocinar-pasta.jpg" alt="Paso 2 receta">
+
+                            <img src="./optimized-img/medium-cocinar-pasta.webp" 
+                            srcset="./optimized-img/small-cocinar-pasta.webp 400w,
+                                    ./optimized-img/medium-cocinar-pasta.webp 800w,
+                                    ./optimized-img/large-cocinar-pasta.webp 1200w"
+                            sizes="(max-width: 768px) 100vw, 50vw"
+                            alt="Paso 2 receta"> 
                             <h3>Paso 2</h3>
                             <p>Hierve la pasta en agua con sal hasta que este al dente</p>
+
                         </div>
                         <div class="swiper-slide">
-                            <img src="./img/pasta-pesto.jpg" alt="Paso 3 receta">
+
+                            <img src="./optimized-img/medium-pasta-pesto.webp" 
+                            srcset="./optimized-img/small-pasta-pesto.webp 400w,
+                                    ./optimized-img/medium-pasta-pesto.webp 800w,
+                                    ./optimized-img/large-pasta-pesto.webp 1200w"
+                            sizes="(max-width: 768px) 100vw, 50vw"
+                            alt="Paso 3 receta"> 
                             <h3>Paso 3</h3>
                             <p>Combina la pasta caliente con el pesto</p>
+
                         </div>
                     </div>
                     <div class="swiper-button-prev"></div>

@@ -3,11 +3,12 @@
   "source": "src/index.html",
   "browserslist": "> 0.5%, last 2 versions, not dead",
   "scripts": {
-    "parcel:dev": "parcel",
-    "parcel:build": "parcel build",
     "clean": "rimraf dist .parcel-cache",
-    "start": "npm-run-all clean parcel:dev",
-    "build": "npm-run-all clean parcel:build"
+    "optimize-images": "node src/app.js --optimize-only",
+    "parcel:build": "parcel build",
+    "parcel:dev": "parcel",
+    "build": "npm-run-all clean optimize-images parcel:build",
+    "start": "npm-run-all clean parcel:dev"
   },
   "keywords": [],
   "author": "",
@@ -16,12 +17,28 @@
   "devDependencies": {
     "@babel/core": "^7.26.10",
     "@parcel/transformer-sass": "^2.14.4",
+    "buffer": "^6.0.3",
+    "crypto-browserify": "^3.12.1",
+    "events": "^3.3.0",
     "npm-run-all": "^4.1.5",
+    "os-browserify": "^0.3.0",
     "parcel": "^2.14.4",
+    "path-browserify": "^1.0.1",
     "posthtml-include": "^2.0.1",
-    "rimraf": "^6.0.1"
+    "rimraf": "^6.0.1",
+    "stream-browserify": "^3.0.0",
+    "util": "^0.12.5",
+    "vm-browserify": "^1.1.2"
   },
   "dependencies": {
+    "fs": "^0.0.1-security",
+    "path": "^0.12.7",
+    "sharp": "^0.34.1",
     "swiper": "^11.2.5"
+  },
+  "browser": {
+    "fs": false,
+    "path": false,
+    "sharp": false
   }
 }

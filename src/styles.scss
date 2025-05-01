@@ -16,40 +16,6 @@ $btn-hover-color: rgba(255, 255, 255, 0.8);
 $icon-size: 20px;
 $icon-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
 
-// Mixins para reutilización de código
-@mixin flex-center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-@mixin box-shadow($level) {
-    box-shadow: 0 $level $level * 2 rgba(0, 0, 0, 0.1);
-}
-
-// Mixin para botones de navegación Swiper
-@mixin swiper-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: $btn-size;
-    height: $btn-size;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: $btn-color;
-    color: rgb(0, 0, 0);
-    font-size: $icon-size;
-    cursor: pointer;
-    z-index: 10;
-
-    &:hover {
-        background-color: $btn-hover-color;
-    }
-}
-
-
 // Estilos generales
 body {
     font-family: $fuente-principal;
@@ -57,20 +23,19 @@ body {
     padding: 0;
     background-color: $color-fondo;
     text-align: center;
-    //animation: fondoAnimado 10s infinite;
 }
 
 // Header y navegación
 header {
     color: $color-hover;
     padding: 1rem;
-    background-image: url('./optimized-img/large-foto-header.webp'); /* Cambia por la imagen elegida */
+    background-image: url('./optimized-img/large-foto-header.webp'); 
     background-size: cover;
     background-position: center; 
     background-attachment: fixed;
 
     div{
-        background-color: rgba(255, 255, 255, 0.6); /* Fondo oscuro semi-transparente */
+        background-color: rgba(255, 255, 255, 0.6); 
         width: 100%;
         padding: 1px;
         margin-bottom: 3%;
@@ -123,48 +88,6 @@ header {
     }
 }
 
-@keyframes aparecerCubiertos {
-    0% { transform: translateY(-20%) scale(1) rotate(0deg); }
-    100% { transform: translateY(-20%) scale(2) rotate(-360deg); }
-}
-
-@keyframes desaparecerCubiertos {
-    0% { transform: translateY(-20%) scale(2) rotate(-360deg); }
-    100% { transform: translateY(-20%) scale(1) rotate(0deg); }
-}
-
-@media (max-width: 1024px) {
-    header{
-
-        h1{
-            font-size: 2.5rem;
-        }
-        
-    }
-}
-
-@media (max-width: 600px) {
-    header{
-
-        h1{
-            font-size: 2rem;
-        }
-        
-        nav ul li{
-            margin: 0 13px;
-
-            a{
-                padding-right: 0px ;
-                font-size: 1.3rem;
-            }
-
-        } 
-
-    }
-}
-
-
-
 // Portada
 .portada {
     
@@ -182,57 +105,8 @@ header {
         margin: 0 auto; 
         text-align: center; 
     }
-
-    .svg-icon text:first-child {
-        animation: moverIzq 2s infinite alternate;
-    }
     
-    .svg-icon text:last-child {
-        animation: moverDer 2s infinite alternate;
-    }
-    
-    @keyframes moverIzq {
-        0% { transform: translateX(-10px); }
-        100% { transform: translateX(10px); }
-    }
-    
-    @keyframes moverDer {
-        0% { transform: translateX(10px); }
-        100% { transform: translateX(-10px); }
-    }
-
 }
-
-@media (max-width: 1024px) {
-    .portada {
-
-        p{
-            width: 70%;
-            margin: 0 auto; 
-        }
-
-        clip-path: polygon(0% 0%, 100% 0%, 85% 90%, 15% 90%);
-    }
-}
-
-@media (max-width: 600px) {
-    .portada {
-
-        h2{
-            width: 90%;
-            margin: 0 auto; 
-            margin-bottom: 10%;
-        }
-
-        p{
-            width: 70%;
-        }
-
-        clip-path: polygon(0% 0%, 100% 0%, 83% 88%, 19% 88%);
-    }
-}
-
-
 
 // Footer
 footer {
@@ -272,20 +146,6 @@ footer {
         object-fit: cover; 
         display: block;
     }
-
-    @media (max-width: 1024px) {
-        .imagen-detalle img {
-            height: 400px; 
-        }
-    }
-
-    @media (max-width: 600px) {
-        .imagen-detalle img {
-            height: 300px; 
-        }
-    }
-    
-    
 
     .texto-detalle p {
         margin: 15px 0;
@@ -400,8 +260,6 @@ footer {
     }
 }
 
-
-
 // Swiper Carrusel
 .carrusel {
     max-width: 800px;
@@ -464,7 +322,7 @@ footer {
         &::after {
             font-size: $icon-size;
             font-weight: bold;
-            content: '←'; // Flecha izquierda
+            content: '←'; 
         }
     }
     
@@ -475,7 +333,7 @@ footer {
         &::after {
             font-size: $icon-size;
             font-weight: bold;
-            content: '→'; // Flecha derecha
+            content: '→'; 
         }
     }
 
@@ -494,4 +352,124 @@ footer {
 }
 
 
+/*MIXINS*/
+
+// Mixins para reutilización de código
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+//Mixin para sobra del texto
+@mixin box-shadow($level) {
+    box-shadow: 0 $level $level * 2 rgba(0, 0, 0, 0.1);
+}
+
+// Mixin para botones de navegación Swiper
+@mixin swiper-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: $btn-size;
+    height: $btn-size;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $btn-color;
+    color: rgb(0, 0, 0);
+    font-size: $icon-size;
+    cursor: pointer;
+    z-index: 10;
+
+    &:hover {
+        background-color: $btn-hover-color;
+    }
+}
+
+
+/*KEYFRAMES*/
+
+//Keyframe para aparecer cubiertos navegación
+@keyframes aparecerCubiertos {
+    0% { transform: translateY(-20%) scale(1) rotate(0deg); }
+    100% { transform: translateY(-20%) scale(2) rotate(-360deg); }
+}
+
+//Keyframe para desaparecer cubiertos navegación
+@keyframes desaparecerCubiertos {
+    0% { transform: translateY(-20%) scale(2) rotate(-360deg); }
+    100% { transform: translateY(-20%) scale(1) rotate(0deg); }
+}
+
+
+/*MEDIA QUERIES -> los estilos bases estan hechos para dispositivos grandes y de manera responsiva*/
+
+//Media querie para dispositivos medianos
+@media (max-width: 1024px) {
+    header{
+
+        h1{
+            font-size: 2.5rem;
+        }
+        
+    }
+
+    .portada {
+
+        p{
+            width: 70%;
+            margin: 0 auto; 
+        }
+
+        clip-path: polygon(0% 0%, 100% 0%, 85% 90%, 15% 90%);
+    }
+
+    .detalle .imagen-detalle img {
+        height: 400px; 
+    }
+
+}
+
+//Media querie para dispositivos pequeños
+@media (max-width: 600px) {
+    header{
+
+        h1{
+            font-size: 2rem;
+        }
+        
+        nav ul li{
+            margin: 0 1px;
+
+            a{
+                padding-right: 0px ;
+                font-size: 1.3rem;
+            }
+            
+        } 
+
+    }
+
+    .portada {
+
+        h2{
+            width: 80%;
+            margin: 0 auto; 
+            margin-bottom: 10%;
+        }
+
+        p{
+            width: 60%;
+        }
+
+        clip-path: polygon(0% 0%, 100% 0%, 75% 88%, 31% 88%);
+    }
+
+    .detalle .imagen-detalle img {
+        height: 300px; 
+    }
+
+}
 

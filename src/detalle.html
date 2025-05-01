@@ -8,25 +8,57 @@
 </head>
 <body>
     <header>
-        <h1>Receta</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="categoria.html">Categorías</a></li>
-                <li><a href="enlaces.html">Enlaces</a></li>
-            </ul>
-        </nav>
+        <div>
+            <h1>Receta</h1>
+        </div>
+
+        <div>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="index.html">
+                            <svg class="cubiertos" width="40" height="40" viewBox="0 0 100 100">
+                                <text x="30" y="40" font-size="30">🍴</text>
+                            </svg>
+                            Inicio
+                        </a>
+                    </li>
+                    <li>
+                        <a href="categoria.html">
+                            <svg class="cubiertos" width="40" height="40" viewBox="0 0 100 100">
+                                <text x="30" y="40" font-size="30">🍴</text>
+                            </svg>
+                            Categorías
+                        </a>
+                    </li>
+                    <li>
+                        <a href="enlaces.html">
+                            <svg class="cubiertos" width="40" height="40" viewBox="0 0 100 100">
+                                <text x="30" y="40" font-size="30">🍴</text>
+                            </svg>
+                            Enlaces
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
     </header>
     <main>
         <section class="detalle">
             <!-- Imagen destacada -->
-            <img src="./optimized-img/medium-pesto.webp" 
-            srcset="./optimized-img/small-pesto.webp 400w,
-                    ./optimized-img/medium-pesto.webp 800w,
-                    ./optimized-img/large-pesto.webp 1200w"
-            sizes="(max-width: 768px) 100vw, 50vw"
-            alt="Pasta al Pesto"
-            class="imagen-detalle"> 
+            <picture class="imagen-detalle">
+                <!-- Imagen para dispositivos pequeños (móviles) -->
+                <source srcset="./optimized-img/small-pesto.webp" media="(max-width: 768px)">
+            
+                <!-- Imagen para tablets -->
+                <source srcset="./optimized-img/medium-pesto.webp" media="(min-width: 769px) and (max-width: 1024px)">
+            
+                <!-- Imagen para pantallas grandes -->
+                <source srcset="./optimized-img/large-pesto.webp" media="(min-width: 1025px)">
+            
+                <!-- Fallback para navegadores sin soporte para <picture> (extremadamente raro) -->
+                <img src="./optimized-img/medium-pesto.webp" alt="Pasta al Pesto">
+            </picture>            
             
             <h1>Pasta al Pesto</h1>
 
@@ -51,7 +83,8 @@
                                     ./optimized-img/medium-salsa-pesto.webp 800w,
                                     ./optimized-img/large-salsa-pesto.webp 1200w"
                             sizes="(max-width: 768px) 100vw, 50vw"
-                            alt="Paso 1 receta"> 
+                            alt="Paso 1 receta"
+                            loading = "lazy"> 
                             <h3>Paso 1</h3>
                             <p>Se mezcla hojas frescas de albahaca, ajo, piñones, queso parmesano y aceite, para crear la salsa</p>
 
@@ -63,7 +96,8 @@
                                     ./optimized-img/medium-cocinar-pasta.webp 800w,
                                     ./optimized-img/large-cocinar-pasta.webp 1200w"
                             sizes="(max-width: 768px) 100vw, 50vw"
-                            alt="Paso 2 receta"> 
+                            alt="Paso 2 receta"
+                            loading = "lazy"> 
                             <h3>Paso 2</h3>
                             <p>Hierve la pasta en agua con sal hasta que este al dente</p>
 
@@ -75,7 +109,8 @@
                                     ./optimized-img/medium-pasta-pesto.webp 800w,
                                     ./optimized-img/large-pasta-pesto.webp 1200w"
                             sizes="(max-width: 768px) 100vw, 50vw"
-                            alt="Paso 3 receta"> 
+                            alt="Paso 3 receta"
+                            loading = "lazy"> 
                             <h3>Paso 3</h3>
                             <p>Combina la pasta caliente con el pesto</p>
 

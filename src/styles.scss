@@ -150,9 +150,15 @@ header {
             font-size: 2rem;
         }
         
-        nav ul li a{
-            font-size: 1.3rem;
-        }
+        nav ul li{
+            margin: 0 13px;
+
+            a{
+                padding-right: 0px ;
+                font-size: 1.3rem;
+            }
+
+        } 
 
     }
 }

@@ -305,8 +305,8 @@ footer {
                 transition: background-color 0.3s, color 0.3s;
     
                 &:hover {
-                    color: $color-texto; // Letras blancas
-                    background-color: $color-principal; // Fondo en color principal
+                    color: $color-texto; 
+                    background-color: $color-principal;
                     border-radius: 5px;
                 }
             }
@@ -447,7 +447,7 @@ footer {
                 padding-right: 0px ;
                 font-size: 1.3rem;
             }
-            
+
         } 
 
     }

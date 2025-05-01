@@ -8,12 +8,12 @@ import fs from "fs";
 import path from "path";
 
 // Detecta si el script debe ejecutarse solo para optimizar imágenes
-const args = process.argv.slice(2); // Obtiene argumentos de la línea de comandos
+const args = process.argv.slice(2); 
 const optimizeOnly = args.includes("--optimize-only");
 
 
 if (optimizeOnly) {
-    optimizeImages(); // Ejecuta solo la optimización de imágenes
+    optimizeImages(); 
 } else {
     document.addEventListener("DOMContentLoaded", () => {
         
@@ -38,8 +38,8 @@ if (optimizeOnly) {
 
 // Función para optimizar imágenes con Sharp
 function optimizeImages() {
-    const inputDir = "./src/img"; // Carpeta con imágenes originales
-    const outputDir = "./src/optimized-img"; // Carpeta de imágenes optimizadas
+    const inputDir = "./src/img"; 
+    const outputDir = "./src/optimized-img"; 
 
     // Crear carpeta de destino si no existe
     if (!fs.existsSync(outputDir)) {
@@ -57,13 +57,13 @@ function optimizeImages() {
             const inputPath = path.join(inputDir, file);
     
             sharp(inputPath)
-                .resize({ width: 400 }) // Versión para móviles
+                .resize({ width: 400 }) 
                 .toFile(path.join(outputDir, `small-${file.split('.')[0]}.webp`));
             sharp(inputPath)
-                .resize({ width: 800 }) // Versión para tablets
+                .resize({ width: 800 }) 
                 .toFile(path.join(outputDir, `medium-${file.split('.')[0]}.webp`));
             sharp(inputPath)
-                .resize({ width: 1200 }) // Versión para ordenadores
+                .resize({ width: 1200 }) 
                 .toFile(path.join(outputDir, `large-${file.split('.')[0]}.webp`));
         });
     });

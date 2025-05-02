@@ -16,6 +16,42 @@ $btn-hover-color: rgba(255, 255, 255, 0.8);
 $icon-size: 20px;
 $icon-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
 
+/*MIXINS*/
+
+// Mixins para reutilización de código
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+//Mixin para sobra del texto
+@mixin box-shadow($level) {
+    box-shadow: 0 $level $level * 2 rgba(0, 0, 0, 0.1);
+}
+
+// Mixin para botones de navegación Swiper
+@mixin swiper-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: $btn-size;
+    height: $btn-size;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $btn-color;
+    color: rgb(0, 0, 0);
+    font-size: $icon-size;
+    cursor: pointer;
+    z-index: 10;
+
+    &:hover {
+        background-color: $btn-hover-color;
+    }
+}
+
 // Estilos generales
 body {
     font-family: $fuente-principal;
@@ -348,43 +384,6 @@ footer {
     .swiper-pagination {
         position: absolute;
         bottom: 10px;
-    }
-}
-
-
-/*MIXINS*/
-
-// Mixins para reutilización de código
-@mixin flex-center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-//Mixin para sobra del texto
-@mixin box-shadow($level) {
-    box-shadow: 0 $level $level * 2 rgba(0, 0, 0, 0.1);
-}
-
-// Mixin para botones de navegación Swiper
-@mixin swiper-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: $btn-size;
-    height: $btn-size;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: $btn-color;
-    color: rgb(0, 0, 0);
-    font-size: $icon-size;
-    cursor: pointer;
-    z-index: 10;
-
-    &:hover {
-        background-color: $btn-hover-color;
     }
 }
 

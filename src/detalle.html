@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Detalle de la Receta</title>
     <link rel="stylesheet" href="styles.scss">
+    <link rel="preload" as="image" href="./optimized-img/small-foto-header.webp" type="image/webp" media="(max-width: 600px)" fetchpriority="high">
+    <link rel="preload" as="image" href="./optimized-img/medium-foto-header.webp" type="image/webp" media="(max-width: 1024px)" fetchpriority="high">
+    <link rel="preload" as="image" href="./optimized-img/large-foto-header.webp" type="image/webp" media="(min-width: 1025px)" fetchpriority="high">
+
 </head>
 <body>
     <header>
@@ -45,20 +49,13 @@
     </header>
     <main>
         <section class="detalle">
-            <!-- Imagen destacada -->
-            <picture class="imagen-detalle">
-                <!-- Imagen para dispositivos pequeños (móviles) -->
-                <source srcset="./optimized-img/small-pesto.webp" media="(max-width: 768px)">
-            
-                <!-- Imagen para tablets -->
-                <source srcset="./optimized-img/medium-pesto.webp" media="(min-width: 769px) and (max-width: 1024px)">
-            
-                <!-- Imagen para pantallas grandes -->
+
+            <picture >
+                <source srcset="./optimized-img/small-pesto.webp" media="(max-width: 600px)">
+                <source srcset="./optimized-img/medium-pesto.webp" media="(max-width: 1024px)">
                 <source srcset="./optimized-img/large-pesto.webp" media="(min-width: 1025px)">
-            
-                <!-- Fallback para navegadores sin soporte para <picture> (extremadamente raro) -->
-                <img src="./optimized-img/medium-pesto.webp" alt="Pasta al Pesto">
-            </picture>            
+                <img src="./optimized-img/small-pesto.webp" alt="Pasta al Pesto" loading = "eager">
+            </picture>        
             
             <h1>Pasta al Pesto</h1>
 
@@ -78,39 +75,39 @@
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
 
-                            <img src="./optimized-img/medium-salsa-pesto.webp" 
-                            srcset="./optimized-img/small-salsa-pesto.webp 400w,
-                                    ./optimized-img/medium-salsa-pesto.webp 800w,
-                                    ./optimized-img/large-salsa-pesto.webp 1200w"
-                            sizes="(max-width: 768px) 100vw, 50vw"
-                            alt="Paso 1 receta"
-                            loading = "lazy"> 
+                            <picture>
+                                <source srcset="./optimized-img/small-salsa-pesto.webp" media="(max-width: 600px)">
+                                <source srcset="./optimized-img/medium-salsa-pesto.webp" media="(max-width: 1024px)">
+                                <source srcset="./optimized-img/large-salsa-pesto.webp" media="(min-width: 1025px)">
+                                <img src="./optimized-img/small-salsa-pesto.webp" alt="Paso 1 receta" loading = "lazy">
+                            </picture>
+
                             <h3>Paso 1</h3>
                             <p>Se mezcla hojas frescas de albahaca, ajo, piñones, queso parmesano y aceite, para crear la salsa</p>
 
                         </div>
                         <div class="swiper-slide">
 
-                            <img src="./optimized-img/medium-cocinar-pasta.webp" 
-                            srcset="./optimized-img/small-cocinar-pasta.webp 400w,
-                                    ./optimized-img/medium-cocinar-pasta.webp 800w,
-                                    ./optimized-img/large-cocinar-pasta.webp 1200w"
-                            sizes="(max-width: 768px) 100vw, 50vw"
-                            alt="Paso 2 receta"
-                            loading = "lazy"> 
+                            <picture>
+                                <source srcset="./optimized-img/small-cocinar-pasta.webp" media="(max-width: 600px)">
+                                <source srcset="./optimized-img/medium-cocinar-pasta.webp" media="(max-width: 1024px)">
+                                <source srcset="./optimized-img/large-cocinar-pasta.webp" media="(min-width: 1025px)">
+                                <img src="./optimized-img/small-cocinar-pasta.webp" alt="Paso 1 receta" loading = "lazy">
+                            </picture>
+
                             <h3>Paso 2</h3>
                             <p>Hierve la pasta en agua con sal hasta que este al dente</p>
 
                         </div>
                         <div class="swiper-slide">
 
-                            <img src="./optimized-img/medium-pasta-pesto.webp" 
-                            srcset="./optimized-img/small-pasta-pesto.webp 400w,
-                                    ./optimized-img/medium-pasta-pesto.webp 800w,
-                                    ./optimized-img/large-pasta-pesto.webp 1200w"
-                            sizes="(max-width: 768px) 100vw, 50vw"
-                            alt="Paso 3 receta"
-                            loading = "lazy"> 
+                            <picture>
+                                <source srcset="./optimized-img/small-pasta-pesto.webp" media="(max-width: 600px)">
+                                <source srcset="./optimized-img/medium-pasta-pesto.webp" media="(max-width: 1024px)">
+                                <source srcset="./optimized-img/large-pasta-pesto.webp" media="(min-width: 1025px)">
+                                <img src="./optimized-img/small-pasta-pesto.webp" alt="Paso 1 receta" loading = "lazy">
+                            </picture>
+
                             <h3>Paso 3</h3>
                             <p>Combina la pasta caliente con el pesto</p>
 
@@ -130,12 +127,13 @@
                 src="https://www.youtube.com/embed/mpJW-bIZrQ0" 
                 frameborder="0" 
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                allowfullscreen>
+                allowfullscreen
+                loading="lazy">
             </iframe>
 
         </section>
     </main>
-    <script type="module" src="app.js"></script>
+    <script type="module" src="app.js" defer></script>
 
     <footer>
         <p>&copy; 2025 Sabores del Mundo. Todos los derechos reservados.</p>

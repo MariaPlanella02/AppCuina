@@ -65,7 +65,7 @@ body {
 header {
     color: $color-hover;
     padding: 1rem;
-    background-image: url('./optimized-img/large-foto-header.webp'); 
+    background-image: url('./optimized-img/large-foto-header.webp') ;
     background-size: cover;
     background-position: center; 
     background-attachment: fixed;
@@ -128,7 +128,7 @@ header {
 .portada {
     
     padding: 50px 20px;
-    background-image: url('./optimized-img/large-foto-header.webp'); 
+    background-image: url('./optimized-img/large-foto-header.webp') ;
     background-size: cover;
     background-position: center;
     clip-path: polygon(0% 0%, 100% 0%, 80% 100%, 20% 100%);
@@ -176,9 +176,9 @@ footer {
         text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
     }
 
-    .imagen-detalle img {
+    .imagen-detalle  {
         width: 100%;
-        height: 550px; 
+        height: 600px; 
         object-fit: cover; 
         display: block;
     }
@@ -275,7 +275,7 @@ footer {
         color: inherit;
     }
 
-    img {
+    picture {
         width: 100%;
         max-height: 500px;
         object-fit: cover;
@@ -312,9 +312,11 @@ footer {
         flex-direction: column;
         text-align: center;
         height: auto;
+        overflow: hidden;
         
 
-        img {
+        picture {
+            flex: 1;
             width: 100%;
             height: 100%;
             max-height: 88%;
@@ -322,6 +324,7 @@ footer {
             border-radius: 8px;
             margin-bottom: 10px;
             flex-shrink: 0;
+            
         }
 
         h3 {
@@ -408,7 +411,7 @@ footer {
 //Media querie para dispositivos medianos
 @media (max-width: 1024px) {
     header{
-
+        background-image: url('./optimized-img/medium-foto-header.webp') ;
         h1{
             font-size: 2.5rem;
         }
@@ -416,7 +419,7 @@ footer {
     }
 
     .portada {
-
+        background-image: url('./optimized-img/medium-foto-header.webp') ;
         p{
             width: 70%;
             margin: 0 auto; 
@@ -425,7 +428,7 @@ footer {
         clip-path: polygon(0% 0%, 100% 0%, 85% 90%, 15% 90%);
     }
 
-    .detalle .imagen-detalle img {
+    .detalle .imagen-detalle picture {
         height: 400px; 
     }
 
@@ -434,7 +437,7 @@ footer {
 //Media querie para dispositivos pequeños
 @media (max-width: 600px) {
     header{
-
+        background-image: url('./optimized-img/small-foto-header.webp') ;
         h1{
             font-size: 2rem;
         }
@@ -452,7 +455,7 @@ footer {
     }
 
     .portada {
-
+        background-image: url('./optimized-img/small-foto-header.webp') ;
         h2{
             width: 80%;
             margin: 0 auto; 
@@ -466,9 +469,10 @@ footer {
         clip-path: polygon(0% 0%, 100% 0%, 75% 88%, 31% 88%);
     }
 
-    .detalle .imagen-detalle img {
-        height: 300px; 
+    .detalle .imagen-detalle picture {
+        height: 30px; 
     }
+
 
 }
 

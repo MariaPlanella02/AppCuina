@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Categorías</title>
     <link rel="stylesheet" href="styles.scss">
+    <link rel="preload" as="image" href="./optimized-img/small-foto-header.webp" type="image/webp" media="(max-width: 600px)" fetchpriority="high">
+    <link rel="preload" as="image" href="./optimized-img/medium-foto-header.webp" type="image/webp" media="(max-width: 1024px)" fetchpriority="high">
+    <link rel="preload" as="image" href="./optimized-img/large-foto-header.webp" type="image/webp" media="(min-width: 1025px)" fetchpriority="high">
+
 </head>
 <body>
 
@@ -46,12 +50,13 @@
                 <div class="categoria">
                     <a href="detalle.html">
 
-                        <img src="./optimized-img/medium-pesto.webp" 
-                        srcset="./optimized-img/small-pesto.webp 400w,
-                                ./optimized-img/medium-pesto.webp 800w,
-                                ./optimized-img/large-pesto.webp 1200w"
-                        sizes="(max-width: 768px) 100vw, 50vw"
-                        alt="Pasta al Pesto"> 
+                        <picture>
+                            <source srcset="./optimized-img/small-pesto.webp" media="(max-width: 600px)">
+                            <source srcset="./optimized-img/medium-pesto.webp" media="(max-width: 1024px)">
+                            <source srcset="./optimized-img/large-pesto.webp" media="(min-width: 1025px)">
+                            <img src="./optimized-img/small-pesto.webp" alt="Pasta al Pesto" loading = "eager">
+                        </picture>
+
                         <h3>Pasta al Pesto</h3>
                         <p>Descubre cómo preparar este delicioso plato italiano.</p>
 
@@ -61,12 +66,13 @@
                 <!-- Elemento 2: Restaurante -->
                 <div class="categoria">
 
-                    <img src="./optimized-img/medium-restaurante-gourmet.webp" 
-                        srcset="./optimized-img/small-restaurante-gourmet.webp 400w,
-                                ./optimized-img/medium-restaurante-gourmet.webp 800w,
-                                ./optimized-img/large-restaurante-gourmet.webp 1200w"
-                        sizes="(max-width: 768px) 100vw, 50vw"
-                        alt="Imagen de Restaurante Gourmet"> 
+                    <picture>
+                        <source srcset="./optimized-img/medium-restaurante-gourmet.webp" media="(max-width: 600px)">
+                        <source srcset="./optimized-img/medium-restaurante-gourmet.webp" media="(max-width: 1024px)">
+                        <source srcset="./optimized-img/large-restaurante-gourmet.webp" media="(min-width: 1025px)">
+                        <img src="./optimized-img/medium-restaurante-gourmet.webp" alt="Imagen de Restaurante Gourmet" loading = "eager">
+                    </picture>
+
                     <h3>Restaurante Gourmet</h3>
                     <p>Explora los mejores restaurantes de comida internacional.</p>
 
@@ -75,12 +81,13 @@
                 <!-- Elemento 3: Evento -->
                 <div class="categoria">
 
-                    <img src="./optimized-img/medium-evento-culinario.webp" 
-                        srcset="./optimized-img/small-evento-culinario.webp 400w,
-                                ./optimized-img/medium-evento-culinario.webp 800w,
-                                ./optimized-img/large-evento-culinario.webp 1200w"
-                        sizes="(max-width: 768px) 100vw, 50vw"
-                        alt="Imagen de Evento Culinario"> 
+                    <picture>
+                        <source srcset="./optimized-img/small-evento-culinario.webp" media="(max-width: 600px)">
+                        <source srcset="./optimized-img/medium-evento-culinario.webp" media="(max-width: 1024px)">
+                        <source srcset="./optimized-img/large-evento-culinario.webp" media="(min-width: 1025px)">
+                        <img src="./optimized-img/small-evento-culinario.webp" alt="Imagen de Evento Culinario" loading = "eager">
+                    </picture>
+
                     <h3>Evento Culinario</h3>
                     <p>No te pierdas el próximo festival gastronómico en tu ciudad.</p>
                     

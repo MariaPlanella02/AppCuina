@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recetario</title>
     <link rel="stylesheet" href="./styles.scss">
+    <link rel="preload" as="image" href="./optimized-img/small-foto-header.webp" type="image/webp" media="(max-width: 600px)" fetchpriority="high">
+    <link rel="preload" as="image" href="./optimized-img/medium-foto-header.webp" type="image/webp" media="(max-width: 1024px)" fetchpriority="high">
+    <link rel="preload" as="image" href="./optimized-img/large-foto-header.webp" type="image/webp" media="(min-width: 1025px)" fetchpriority="high">
+
 </head>
 <body>
     <header>
@@ -49,34 +53,37 @@
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
 
-                        <img src="./optimized-img/medium-pesto.webp" 
-                        srcset="./optimized-img/small-pesto.webp 400w,
-                                ./optimized-img/medium-pesto.webp 800w,
-                                ./optimized-img/large-pesto.webp 1200w"
-                        sizes="(max-width: 768px) 100vw, 50vw"
-                        alt="Pasta al Pesto"> 
+                        <picture>
+                            <source srcset="./optimized-img/small-pesto.webp" media="(max-width: 600px)">
+                            <source srcset="./optimized-img/medium-pesto.webp" media="(max-width: 1024px)">
+                            <source srcset="./optimized-img/large-pesto.webp" media="(min-width: 1025px)">
+                            <img src="./optimized-img/small-pesto.webp" alt="Pasta al Pesto" loading="eager">
+                        </picture>
+
                         <h3><a href="detalle.html">Pasta al Pesto</a></h3>
 
                     </div>
                     <div class="swiper-slide">
 
-                        <img src="./optimized-img/medium-lasagna.webp" 
-                        srcset="./optimized-img/small-lasagna.webp 400w,
-                                ./optimized-img/medium-lasagna.webp 800w,
-                                ./optimized-img/large-lasagna.webp 1200w"
-                        sizes="(max-width: 768px) 100vw, 50vw"
-                        alt="Lasagna"> 
+                        <picture>
+                            <source srcset="./optimized-img/small-lasagna.webp" media="(max-width: 600px)">
+                            <source srcset="./optimized-img/medium-lasagna.webp" media="(max-width: 1024px)">
+                            <source srcset="./optimized-img/large-lasagna.webp" media="(min-width: 1025px)">
+                            <img src="./optimized-img/small-lasagna.webp" alt="Lasagna" loading="lazy">
+                        </picture>
+
                         <h3>Lasagna</h3>
 
                     </div>
                     <div class="swiper-slide">
 
-                        <img src="./optimized-img/medium-pizza.webp" 
-                        srcset="./optimized-img/small-pizza.webp 400w,
-                                ./optimized-img/medium-pizza.webp 800w,
-                                ./optimized-img/large-pizza.webp 1200w"
-                        sizes="(max-width: 768px) 100vw, 50vw"
-                        alt="Pizza Margarita"> 
+                        <picture>
+                            <source srcset="./optimized-img/small-pizza.webp" media="(max-width: 600px)">
+                            <source srcset="./optimized-img/medium-pizza.webp" media="(max-width: 1024px)">
+                            <source srcset="./optimized-img/large-pizza.webp" media="(min-width: 1025px)">
+                            <img src="./optimized-img/small-pizza.webp" alt="Pizza Margarita" loading="lazy">
+                        </picture>
+
                         <h3>Pizza Margarita</h3>
 
                     </div>
@@ -93,34 +100,37 @@
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
 
-                        <img src="./optimized-img/medium-tacos.webp" 
-                        srcset="./optimized-img/small-tacos.webp 400w,
-                                ./optimized-img/medium-tacos.webp 800w,
-                                ./optimized-img/large-tacos.webp 1200w"
-                        sizes="(max-width: 768px) 100vw, 50vw"
-                        alt="Tacos de Pollo"> 
+                        <picture>
+                            <source srcset="./optimized-img/small-tacos.webp" media="(max-width: 600px)">
+                            <source srcset="./optimized-img/medium-tacos.webp" media="(max-width: 1024px)">
+                            <source srcset="./optimized-img/large-tacos.webp" media="(min-width: 1025px)">
+                            <img src="./optimized-img/small-tacos.webp" alt="Tacos de Pollo" loading="eager">
+                        </picture>
+
                         <h3>Tacos de Pollo</h3>
 
                     </div>
                     <div class="swiper-slide">
 
-                        <img src="./optimized-img/medium-enchilada.webp" 
-                        srcset="./optimized-img/small-enchilada.webp 400w,
-                                ./optimized-img/medium-enchilada.webp 800w,
-                                ./optimized-img/large-enchilada.webp 1200w"
-                        sizes="(max-width: 768px) 100vw, 50vw"
-                        alt="Enchiladas"> 
+                        <picture>
+                            <source srcset="./optimized-img/small-enchilada.webp" media="(max-width: 600px)">
+                            <source srcset="./optimized-img/medium-enchilada.webp" media="(max-width: 1024px)">
+                            <source srcset="./optimized-img/large-enchilada.webp" media="(min-width: 1025px)">
+                            <img src="./optimized-img/small-enchilada.webp" alt="Enchiladas" loading="lazy">
+                        </picture>
+
                         <h3>Enchiladas</h3>
 
                     </div>
                     <div class="swiper-slide">
 
-                        <img src="./optimized-img/medium-guacamole.webp" 
-                        srcset="./optimized-img/small-guacamole.webp 400w,
-                                ./optimized-img/medium-guacamole.webp 800w,
-                                ./optimized-img/large-guacamole.webp 1200w"
-                        sizes="(max-width: 768px) 100vw, 50vw"
-                        alt="Guacamole"> 
+                        <picture>
+                            <source srcset="./optimized-img/small-guacamole.webp" media="(max-width: 600px)">
+                            <source srcset="./optimized-img/medium-guacamole.webp" media="(max-width: 1024px)">
+                            <source srcset="./optimized-img/large-guacamole.webp" media="(min-width: 1025px)">
+                            <img src="./optimized-img/small-guacamole.webp" alt="Guacamole" loading="lazy">
+                        </picture>
+
                         <h3>Guacamole</h3>
 
                     </div>
@@ -137,34 +147,37 @@
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
 
-                        <img src="./optimized-img/medium-shushi.webp" 
-                        srcset="./optimized-img/small-shushi.webp 400w,
-                                ./optimized-img/medium-shushi.webp 800w,
-                                ./optimized-img/large-shushi.webp 1200w"
-                        sizes="(max-width: 768px) 100vw, 50vw"
-                        alt="Sushi"> 
+                        <picture>
+                            <source srcset="./optimized-img/small-shushi.webp" media="(max-width: 600px)">
+                            <source srcset="./optimized-img/medium-shushi.webp" media="(max-width: 1024px)">
+                            <source srcset="./optimized-img/large-shushi.webp" media="(min-width: 1025px)">
+                            <img src="./optimized-img/small-shushi.webp" alt="Sushi" loading="lazy">
+                        </picture>
+ 
                         <h3>Sushi</h3>
 
                     </div>
                     <div class="swiper-slide">
 
-                        <img src="./optimized-img/medium-ramen.webp" 
-                        srcset="./optimized-img/small-ramen.webp 400w,
-                                ./optimized-img/medium-ramen.webp 800w,
-                                ./optimized-img/large-ramen.webp 1200w"
-                        sizes="(max-width: 768px) 100vw, 50vw"
-                        alt="Ramen"> 
+                        <picture>
+                            <source srcset="./optimized-img/small-ramen.webp" media="(max-width: 600px)">
+                            <source srcset="./optimized-img/medium-ramen.webp" media="(max-width: 1024px)">
+                            <source srcset="./optimized-img/large-ramen.webp" media="(min-width: 1025px)">
+                            <img src="./optimized-img/small-ramen.webp" alt="Ramen" loading="lazy">
+                        </picture>
+
                         <h3>Ramen</h3>
 
                     </div>
                     <div class="swiper-slide">
 
-                        <img src="./optimized-img/medium-dunplings.webp" 
-                        srcset="./optimized-img/small-dunplings.webp 400w,
-                                ./optimized-img/medium-dunplings.webp 800w,
-                                ./optimized-img/large-dunplings.webp 1200w"
-                        sizes="(max-width: 768px) 100vw, 50vw"
-                        alt="Dumplings"> 
+                        <picture>
+                            <source srcset="./optimized-img/small-dunplings.webp" media="(max-width: 600px)">
+                            <source srcset="./optimized-img/medium-dunplings.webp" media="(max-width: 1024px)">
+                            <source srcset="./optimized-img/large-dunplings.webp" media="(min-width: 1025px)">
+                            <img src="./optimized-img/small-ramen.webp" alt="Dumplings" loading="lazy">
+                        </picture>
+
                         <h3>Dumplings</h3>
                         
                     </div>
@@ -175,7 +188,7 @@
             </div>
         </section>
     </main>
-    <script type="module" src="app.js"></script>
+    <script type="module" src="app.js" defer></script>
 
     <footer>
         <p>&copy; 2025 Sabores del Mundo. Todos los derechos reservados.</p>
